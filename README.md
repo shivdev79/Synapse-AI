@@ -1,46 +1,104 @@
-# ✨ Synapse AI: The Next-Gen Multimodal Agent
+# ✨ Synapse AI: Next-Gen Multimodal Intelligence
 
-Synapse AI is a high-performance, real-time multimodal companion designed to break the barriers between human and machine interaction. Powered by the cutting-edge **Gemini 2.5 Flash**, Synapse can see, hear, speak, and create in a unified, fluid experience.
+Synapse AI is a state-of-the-art, real-time multimodal AI agent designed to deliver a fluid, human-like interaction experience. Powered by **Gemini 2.5 Flash**, it bridges the gap between vision, voice, and reasoning in a single, immersive "Live Simulator" environment.
 
-![Synapse AI Premium UI](https://img.shields.io/badge/UI-Ultra_Premium-0ea5e9?style=for-the-badge)
-![Powered by Gemini](https://img.shields.io/badge/Brain-Gemini_2.5_Flash-6366f1?style=for-the-badge)
+---
 
-## 💎 Premium Experience
-Synapse AI isn't just a chatbot—it's a living interface.
-- **Frosted Light Design**: A state-of-the-art "Frosted Blue" UI featuring Glassmorphism, smooth micro-animations, and an intuitive layout.
-- **Continuous Awareness**: Proactive vision commentary allows the AI to "jump into" the conversation based on what it sees through your camera.
-- **Interruptible Streaming**: Natural, non-blocking conversations. You can interrupt the AI at any time, and it will pivot instantly—just like a real person.
+## ⚡ The Synapse Experience
 
-## 🚀 Key Features
-- **👁️ Multimodal Vision**: Real-time analysis of your environment through live camera frame processing.
-- **🎙️ Voice & Text Convergence**: Seamless handling of text and audio-transcribed inputs.
-- **🎨 Creative Tools**: Built-in `generate_image` integration to visualize concepts on the fly.
-- **🧠 Long-term Synapse (Memory)**: remembers user preferences and maintains context across sessions using a persistent MemoryManager.
-- **📡 Live API Simulator**: A robust background task architecture that provides a "Live API" feel even on standard streaming models.
+Synapse AI moves beyond the "turn-based" chat paradigm. It is an **always-listening, always-seeing** companion that exists in a continuous stream.
 
-## 🛠️ Quick Start
+### 🌟 Key Innovations
 
-### 1. Prerequisites
-- **Python 3.10+** & **Node.js**
-- A **Gemini API Key** from [Google AI Studio](https://aistudio.google.com/app/apikey).
+*   **👁️ Proactive Vision Analysis**: Unlike traditional bots, Synapse AI is context-aware. It processes live camera frames and can choose to "comment" on your environment even if you haven't typed a word.
+*   **🎙️ Interruptible "Live" Streaming**: Experience natural dialogue. If you speak or type while the AI is responding, it will instantly interrupt itself to address your new input, mimicking real human conversation.
+*   **🎨 Dynamic Tool Integration**: Deeply integrated with image generation and preference management. Ask for a concept, and Synapse will visualize it on the fly.
+*   **🧠 High-Fidelity Memory**: Using a persistent `MemoryManager`, Synapse retains your preferences and conversation history across sessions, building a unique personality tailored to you.
 
-### 2. Configuration
-Create a `.env` file in the `backend/` directory:
-```env
-GEMINI_API_KEY=your_key_here
+---
+
+## 🎨 Premium Design System
+
+The Synapse UI is built on a custom **"Frosted Blue" Glassmorphism** design system:
+
+*   **Modern Aesthetics**: Ultra-premium light theme with backdrop blurs, soft glows, and animated decorative blobs.
+*   **A-Grade Typography**: Powered by the **Outfit** geometric font for a clean, sophisticated technical feel.
+*   **Responsive Control**: Integrated a session-based history sidebar, real-time status badges, and an intuitive "Mission Control" layout.
+
+---
+
+## 🛠️ Technical Architecture
+
+Synapse AI uses a "Live Simulator" backend architecture to provide low-latency interaction even on standard generative models.
+
+*   **Backend**: Python / FastAPI
+    *   **Asynchronous Message Handling**: Uses `asyncio` queues to manage overlapping inputs.
+    *   **Chat Session Logic**: Leverages the official `google-genai` SDK with persistent chat sessions.
+    *   **Live Simulator**: Background tasks handle the generation stream while keeping the WebSocket open for new inputs.
+*   **Frontend**: React / Vite
+    *   **Custom Design System**: Pure CSS architecture (No Tailwind) for maximum performance and unique branding.
+    *   **Native Media API**: Direct integration with `navigator.mediaDevices` for high-performance camera and microphone polling.
+*   **Database**: Firestore (Google Cloud) with local fallback.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Requirements
+*   **Node.js** (v18+)
+*   **Python** (3.10+)
+*   **Gemini API Key**: Obtain one from [Google AI Studio](https://aistudio.google.com/app/apikey).
+
+### 2. Setup & Installation
+Clone the repository and follow these steps:
+
+**Backend Setup:**
+```powershell
+cd backend
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+# Create a .env file and add:
+# GEMINI_API_KEY=your_actual_api_key
 ```
 
-### 3. Launch
-Run the automated launcher in PowerShell:
+**Frontend Setup:**
+```powershell
+cd frontend
+npm install
+```
+
+### 3. Launching the App
+We’ve provided a "one-click" launcher for Windows users:
 ```powershell
 .\start.ps1
 ```
-Synapse AI will automatically spin up the **FastAPI Backend (8080)** and the **Vite Frontend (5173)**.
-
-## 📁 Project Architecture
-- **/backend**: Python FastAPI core leveraging `google-genai` for the "Live Simulator" logic.
-- **/frontend**: React + Vite SPA with a highly optimized custom CSS design system.
-- **/app**: Modular structure for Memory (History) and Storage (Media).
+*Alternatively, run `npm run dev` in the frontend folder and `uvicorn main:app` in the backend folder.*
 
 ---
-*Built with ❤️ for the Google Solution Challenge 2026*
+
+## 📁 Project Structure
+
+```text
+Synapse-AI/
+├── backend/                # FastAPI Brain
+│   ├── app/                # Memory & Storage Modules
+│   ├── main.py             # Live Simulator Logic
+│   └── .env                # Private Keys (Ignored by Git)
+├── frontend/               # React UI
+│   ├── src/
+│   │   ├── hooks/          # useLiveAgent (Streaming Logic)
+│   │   └── App.jsx         # Main Interface
+│   └── index.html          # App Shell
+├── deployment/             # Docker & Cloud Scripts
+├── start.ps1               # Automated Launcher
+└── README.md               # You are here!
+```
+
+---
+
+## 📜 License & Contribution
+This project was built for the **Google Solution Challenge 2026**.
+Feel free to fork, explore, and contribute to the next evolution of AI interaction!
+
+Built with ❤️ by [shivdev79](https://github.com/shivdev79)
