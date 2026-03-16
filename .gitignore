@@ -1,0 +1,38 @@
+# --- IDE & OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Python / Backend ---
+backend/__pycache__/
+backend/venv/
+backend/.env
+backend/*.txt
+backend/*_out.py
+backend/test_*.py
+backend/check_*.py
+backend/debug_*.py
+backend/find_*.py
+backend/list_*.py
+backend/brute_*.py
+backend/multimodal_live.py
+backend/raw_*.py
+backend/read_*.py
+backend/discovery_results.txt
+backend/bidi_results.txt
+
+# --- Node / Frontend ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Docker ---
+.dockerignore
